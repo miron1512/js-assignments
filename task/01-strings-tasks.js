@@ -281,9 +281,10 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    var ranksOfCards = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '1', 'J', 'Q', 'K'];
-    var suitsOfCards = ['♣', '♦', '♥', '♠'];
-    return 13 * suitsOfCards.indexOf(value[value.length - 1]) + ranksOfCards.indexOf(value[0]);
+    let ranksOfCards = 'A234567891JQK';
+    let suitsOfCards = '♣♦♥♠';
+    let countOfCardsOneSuits = 13;
+    return countOfCardsOneSuits * suitsOfCards.indexOf(value.slice(-1)) + ranksOfCards.indexOf(value[0]);
 }
 
 
